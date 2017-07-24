@@ -1,0 +1,5 @@
+name: Fat Beehive Cakes
+description: Adds cakes
+package: Fat Beehive
+type: module
+core: 8.x
