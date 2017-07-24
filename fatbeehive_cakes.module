@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * Implements hook_cron().
+ */
+function fatbeehive_cakes_cron() {
+  Drupal::service('fatbeehive_cakes.cakes_manager')->createCakesIfNone();
+}

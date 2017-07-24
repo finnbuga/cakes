@@ -1,0 +1,4 @@
+services:
+  fatbeehive_cakes.cakes_manager:
+    class: Drupal\fatbeehive_cakes\CakesManager
+    arguments: ['@entity.manager', '@entity.query']
