@@ -1,0 +1,22 @@
+add cake entities:
+  title: 'Create new Cake entities'
+
+administer cake entities:
+  title: 'Administer Cake entities'
+  description: 'Allow to access the administration form to configure Cake entities.'
+  restrict access: true
+
+delete cake entities:
+  title: 'Delete Cake entities'
+
+edit cake entities:
+  title: 'Edit Cake entities'
+
+access cake overview:
+  title: 'Access the Cake overview page'
+
+view published cake entities:
+  title: 'View published Cake entities'
+
+view unpublished cake entities:
+  title: 'View unpublished Cake entities'

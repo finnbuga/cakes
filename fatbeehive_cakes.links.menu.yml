@@ -1,0 +1,14 @@
+
+# Cake menu items definition
+entity.cake.collection:
+  title: 'Cake list'
+  route_name: entity.cake.collection
+  description: 'List Cake entities'
+  parent: system.admin_structure
+  weight: 100
+
+cake.admin.structure.settings:
+  title: Cake settings
+  description: 'Configure Cake entities'
+  route_name: cake.settings
+  parent: system.admin_structure

@@ -1,0 +1,22 @@
+# Cake routing definition
+cake.settings_tab:
+  route_name: cake.settings
+  title: 'Settings'
+  base_route: cake.settings
+
+entity.cake.canonical:
+  route_name: entity.cake.canonical
+  base_route: entity.cake.canonical
+  title: 'View'
+
+entity.cake.edit_form:
+  route_name: entity.cake.edit_form
+  base_route: entity.cake.canonical
+  title: 'Edit'
+
+entity.cake.delete_form:
+  route_name:  entity.cake.delete_form
+  base_route:  entity.cake.canonical
+  title: Delete
+  weight: 10
+

@@ -1,0 +1,5 @@
+entity.cake.add_form:
+  route_name: entity.cake.add_form
+  title: 'Add Cake'
+  appears_on:
+    - entity.cake.collection

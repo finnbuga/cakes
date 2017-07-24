@@ -1,0 +1,22 @@
+{#
+/**
+ * @file cake.html.twig
+ * Default theme implementation to present Cake data.
+ *
+ * This template is used when viewing Cake pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_cake()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('cake') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>
