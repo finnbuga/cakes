@@ -88,7 +88,7 @@ class CakesManager extends ControllerBase {
    * @param \Drupal\user\Entity\User $user
    */
   public function createCakeForOldMember(User $user) {
-    if ($this->isOldMember($user)) {
+    if ($this->isOldMember($user) && !$this->doesCakeExist($user->getUsername())) {
       $this->createCake($user->getUsername());
     }
   }
@@ -119,5 +119,20 @@ class CakesManager extends ControllerBase {
    */
   private function isOldMember(User $user) {
     return $user->getCreatedTime() < strtotime('-7 days');
+  }
+
+  /**
+   * Check if there's a cake with the give name
+   *
+   * @param string $name
+   *
+   * @return bool
+   */
+  private function doesCakeExist(string $name) {
+    return $this->entityQuery->get('cake')
+      ->condition('name', $name)
+      ->range(0, 1)
+      ->count()
+      ->execute();
   }
 }
