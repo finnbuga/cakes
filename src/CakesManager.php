@@ -80,4 +80,16 @@ class CakesManager extends ControllerBase {
       ->create($data);
     $cake->save();
   }
+
+  public function getAllCakesNames() {
+    /**
+     * @var \Drupal\fatbeehive_cakes\Entity\Cake[]
+     */
+    $cakes = \Drupal::entityTypeManager()->getStorage('cake')->loadByProperties(['status' => 1]);
+    $cakesNames = [];
+    foreach ($cakes as $cake) {
+      $cakesNames[] = $cake->getName();
+    }
+    return $cakesNames;
+  }
 }
