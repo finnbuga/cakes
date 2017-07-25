@@ -5,6 +5,7 @@ namespace Drupal\fatbeehive_cakes;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityManager;
 use Drupal\Core\Entity\Query\QueryFactory;
+use Drupal\user\Entity\User;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -91,5 +92,27 @@ class CakesManager extends ControllerBase {
       $cakesNames[] = $cake->getName();
     }
     return $cakesNames;
+  }
+
+  /**
+   * Create a cake with the user name if an old member
+   *
+   * @param \Drupal\user\Entity\User $user
+   */
+  public function createCakeForOldMember(User $user) {
+    if ($this->isOldMember($user)) {
+      $this->createCake($user->getUsername());
+    }
+  }
+
+  /**
+   * Check if user is old member
+   *
+   * @param \Drupal\user\Entity\User $user
+   *
+   * @return bool
+   */
+  private function isOldMember(User $user) {
+    return $user->getCreatedTime() < strtotime('-7 days');
   }
 }

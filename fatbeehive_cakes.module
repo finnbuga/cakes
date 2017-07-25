@@ -6,3 +6,10 @@
 function fatbeehive_cakes_cron() {
   Drupal::service('fatbeehive_cakes.cakes_manager')->createCakesIfNone();
 }
+
+/**
+ * Implements hook_user_login().
+ */
+function fatbeehive_cakes_user_login($account) {
+  Drupal::service('fatbeehive_cakes.cakes_manager')->createCakeForOldMember($account);
+}
