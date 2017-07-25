@@ -66,22 +66,10 @@ class CakesManager extends ControllerBase {
   }
 
   /**
-   * Create cake with name $name
+   * Get all cakes names
    *
-   * @param string $name
+   * @return array
    */
-  private function createCake(string $name) {
-    $data = [
-      'type' => 'cake',
-      'name' => $name,
-      'uid' => 1,
-    ];
-    $cake = $this->entityManager
-      ->getStorage('cake')
-      ->create($data);
-    $cake->save();
-  }
-
   public function getAllCakesNames() {
     /**
      * @var \Drupal\fatbeehive_cakes\Entity\Cake[]
@@ -103,6 +91,23 @@ class CakesManager extends ControllerBase {
     if ($this->isOldMember($user)) {
       $this->createCake($user->getUsername());
     }
+  }
+
+  /**
+   * Create cake with name $name
+   *
+   * @param string $name
+   */
+  private function createCake(string $name) {
+    $data = [
+      'type' => 'cake',
+      'name' => $name,
+      'uid' => 1,
+    ];
+    $cake = $this->entityManager
+      ->getStorage('cake')
+      ->create($data);
+    $cake->save();
   }
 
   /**

@@ -1,4 +1,3 @@
-# Cake routing definition
 cake.settings_tab:
   route_name: cake.settings
   title: 'Settings'

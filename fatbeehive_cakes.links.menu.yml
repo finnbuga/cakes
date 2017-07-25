@@ -1,5 +1,3 @@
-
-# Cake menu items definition
 entity.cake.collection:
   title: 'Cake list'
   route_name: entity.cake.collection
